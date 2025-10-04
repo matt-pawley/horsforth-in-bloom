@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
-import { ChevronLeft, ChevronRight, X, Search } from "lucide-react";
+import { ChevronLeft, ChevronRight, Search } from "lucide-react";
 
 export default function Sites() {
   const [selectedSite, setSelectedSite] = useState<string | null>(null);
@@ -220,69 +220,70 @@ export default function Sites() {
       {/* Image Gallery Modal */}
       {selectedSiteData && (
         <Dialog open={!!selectedSite} onOpenChange={closeGallery}>
-          <DialogContent className="max-w-6xl w-full h-[95vh] p-0">
+          <DialogContent className="!max-w-none !w-[95vw] !h-[95vh] sm:!h-[90vh] !min-h-[400px] !p-0 !m-2 sm:!m-4 !left-[2.5vw] !top-[2.5vh] sm:!left-[50%] sm:!top-[50%] !translate-x-0 sm:!translate-x-[-50%] !translate-y-0 sm:!translate-y-[-50%]">
             <DialogTitle className="sr-only">
               Image Gallery for {selectedSiteData.name}
             </DialogTitle>
-            <div className="relative h-full flex flex-col">
+            <div className="relative h-full flex flex-col overflow-hidden">
               {/* Header with Site Name */}
-              <div className="flex items-center justify-center p-4 bg-white border-b">
-                <h2 className="text-xl font-semibold text-gray-900">{selectedSiteData.name}</h2>
+              <div className="flex items-center justify-center p-3 sm:p-4 bg-white border-b flex-shrink-0">
+                <h2 className="text-lg sm:text-xl font-semibold text-gray-900 text-center px-4">{selectedSiteData.name}</h2>
               </div>
 
               {/* Main Image Container */}
-              <div className="flex-1 relative bg-gray-100 flex items-center justify-center">
+              <div className="flex-1 relative bg-gray-100 flex items-center justify-center min-h-0 overflow-hidden">
                 {/* Navigation Arrows */}
                 {selectedSiteData.images.length > 1 && (
                   <>
                     <button
                       type="button"
                       onClick={prevImage}
-                      className="absolute left-4 z-10 bg-white/90 text-gray-700 rounded-full p-3 hover:bg-white hover:shadow-lg transition-all"
+                      className="absolute left-2 sm:left-4 z-10 bg-white/90 text-gray-700 rounded-full p-2 sm:p-3 hover:bg-white hover:shadow-lg transition-all"
                       aria-label="Previous image"
                     >
-                      <ChevronLeft className="h-6 w-6" />
+                      <ChevronLeft className="h-4 w-4 sm:h-6 sm:w-6" />
                     </button>
                     <button
                       type="button"
                       onClick={nextImage}
-                      className="absolute right-4 z-10 bg-white/90 text-gray-700 rounded-full p-3 hover:bg-white hover:shadow-lg transition-all"
+                      className="absolute right-2 sm:right-4 z-10 bg-white/90 text-gray-700 rounded-full p-2 sm:p-3 hover:bg-white hover:shadow-lg transition-all"
                       aria-label="Next image"
                     >
-                      <ChevronRight className="h-6 w-6" />
+                      <ChevronRight className="h-4 w-4 sm:h-6 sm:w-6" />
                     </button>
                   </>
                 )}
 
                 {/* Main Image */}
-                <div className="relative w-full h-full max-w-4xl max-h-[70vh]">
+                <div className="relative w-full h-full max-w-5xl max-h-full p-2 sm:p-4 flex items-center justify-center">
                   <Image
                     src={selectedSiteData.images[currentImageIndex]}
                     alt={`${selectedSiteData.name} - Image ${currentImageIndex + 1}`}
                     fill
                     className="object-contain"
                     priority
+                    sizes="(max-width: 768px) 95vw, (max-width: 1200px) 80vw, 70vw"
                   />
                 </div>
               </div>
 
               {/* Footer with Image Counter and Thumbnails */}
-              <div className="bg-white border-t p-4">
-                <div className="flex items-center justify-between mb-4">
-                  <p className="text-sm text-gray-600">
+              <div className="bg-white border-t p-3 sm:p-4 flex-shrink-0">
+                <div className="flex items-center justify-between mb-3 sm:mb-4">
+                  <p className="text-xs sm:text-sm text-gray-600">
                     Image {currentImageIndex + 1} of {selectedSiteData.images.length}
                   </p>
                 </div>
 
                 {/* Thumbnail Strip */}
                 {selectedSiteData.images.length > 1 && (
-                  <div className="flex space-x-2 overflow-x-auto">
+                  <div className="flex space-x-2 overflow-x-auto pb-1">
                     {selectedSiteData.images.map((image, index) => (
                       <button
                         key={image}
                         type="button"
                         onClick={() => setCurrentImageIndex(index)}
-                        className={`flex-shrink-0 w-20 h-20 rounded-lg overflow-hidden border-2 transition-all ${
+                        className={`flex-shrink-0 w-16 h-16 sm:w-20 sm:h-20 rounded-lg overflow-hidden border-2 transition-all ${
                           index === currentImageIndex 
                             ? 'border-orange-400 shadow-lg' 
                             : 'border-gray-200 hover:border-gray-300'
