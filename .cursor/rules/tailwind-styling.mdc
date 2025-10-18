@@ -1,0 +1,32 @@
+---
+globs: *.tsx,*.ts,*.jsx,*.js,*.css
+---
+
+# Tailwind CSS v4 Styling Guidelines
+
+## Tailwind CSS v4
+- Use Tailwind CSS v4 syntax (`@import 'tailwindcss'`)
+- Prefer utility classes over custom CSS
+- Use Tailwind's color system: `orange-400`, `pink-500`, `green-400` for brand colors
+- Avoid gradients unless specifically requested - prefer solid colors
+- Use semantic spacing: `py-16`, `px-4`, `gap-8`, etc.
+- Apply responsive design with `sm:`, `md:`, `lg:`, `xl:` prefixes
+
+## Brand Color Usage
+- **Orange** (`orange-400`): Primary actions, highlights, main brand color
+- **Pink** (`pink-500`): Secondary elements, special highlights
+- **Green** (`green-400`): Nature/sustainability themes, accents
+- Use subtle backgrounds: `bg-orange-50`, `bg-green-50`, `bg-pink-50`
+
+## Common Patterns
+- Page sections: `py-16` for vertical spacing
+- Container: `max-w-7xl mx-auto px-4 sm:px-6 lg:px-8`
+- Buttons: `bg-orange-400 hover:bg-orange-400/90`
+- Text colors: `text-gray-900`, `text-gray-700`, `text-gray-600`
+- Borders: `border-orange-200`, `border-gray-200`
+
+## Avoid
+- Custom CSS when Tailwind utilities exist
+- Inline styles
+- Complex gradients unless specifically requested
+- Hardcoded colors instead of Tailwind classes

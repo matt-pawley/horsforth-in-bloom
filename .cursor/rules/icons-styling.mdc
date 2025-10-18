@@ -1,0 +1,38 @@
+---
+globs: *.tsx,*.ts
+---
+
+# Icons & Visual Styling
+
+## Lucide React Icons
+- Use Lucide React icons consistently
+- Import specific icons: `import { Facebook, Award, ExternalLink, Link as LinkIcon } from "lucide-react"`
+- Use appropriate icon sizes: `h-4 w-4`, `h-6 w-6`
+- Apply consistent styling with brand colors
+
+## Icon Usage Patterns
+```tsx
+// Social media icons
+<Facebook className="h-4 w-4 text-pink-500" />
+
+// Award icons
+<Award className="h-6 w-6 text-orange-400" />
+
+// External link icons
+<ExternalLink className="h-4 w-4 ml-1" />
+
+// Generic link icons
+<LinkIcon className="w-6 h-6 text-orange-400" />
+```
+
+## Visual Consistency
+- Use consistent icon sizes throughout the site
+- Apply brand colors to icons: `text-orange-400`, `text-pink-500`, `text-green-400`
+- Use appropriate spacing with `ml-1`, `mr-2` for icon spacing
+- Maintain visual hierarchy with different icon sizes
+
+## Avoid
+- Mixing different icon libraries
+- Inconsistent icon sizing
+- Icons without proper color theming
+- Icons that don't match the brand aesthetic

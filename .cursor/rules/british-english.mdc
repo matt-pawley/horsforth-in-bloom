@@ -1,0 +1,82 @@
+---
+alwaysApply: true
+description: "Ensure all text content uses British English spelling and terminology"
+---
+
+# British English Localisation
+
+All text content in the Horsforth in Bloom website must use British English spelling and terminology.
+
+## Common British English Spellings
+
+### -ise vs -ize
+- ✅ **Correct**: "organise", "realise", "recognise", "specialise"
+- ❌ **Incorrect**: "organize", "realize", "recognize", "specialize"
+
+### -our vs -or
+- ✅ **Correct**: "colour", "favour", "honour", "behaviour", "neighbour"
+- ❌ **Incorrect**: "color", "favor", "honor", "behavior", "neighbor"
+
+### -re vs -er
+- ✅ **Correct**: "centre", "theatre", "metre", "litre"
+- ❌ **Incorrect**: "center", "theater", "meter", "liter"
+
+### -ll vs -l
+- ✅ **Correct**: "travelling", "modelling", "cancelled", "jewellery"
+- ❌ **Incorrect**: "traveling", "modeling", "canceled", "jewelry"
+
+### -ae/-oe vs -e
+- ✅ **Correct**: "manoeuvre", "foetus", "paediatric"
+- ❌ **Incorrect**: "maneuver", "fetus", "pediatric"
+
+## British Terminology
+
+### Time and Dates
+- ✅ **Correct**: "autumn" (not "fall"), "fortnight", "bank holiday"
+- ✅ **Correct**: "31st March" (not "March 31st")
+
+### Measurements
+- ✅ **Correct**: "metres", "kilometres", "centimetres"
+- ✅ **Correct**: "tonnes" (not "tons")
+
+### Common Words
+- ✅ **Correct**: "car park" (not "parking lot")
+- ✅ **Correct**: "pavement" (not "sidewalk")
+- ✅ **Correct**: "lorry" (not "truck")
+- ✅ **Correct**: "biscuit" (not "cookie")
+- ✅ **Correct**: "crisps" (not "chips")
+
+## Content Guidelines
+
+### Community Context
+- Use "community" rather than "neighborhood"
+- Use "council" rather than "municipality"
+- Use "volunteer" (consistent with American English)
+
+### Gardening Terms
+- Use "wildflower" (one word, consistent with American English)
+- Use "planting" rather than "landscaping"
+- Use "bed" for flower beds
+- Use "roundabout" rather than "traffic circle"
+
+## Implementation
+
+When writing or editing content:
+1. Always check spelling against British English standards
+2. Use British terminology appropriate for UK context
+3. Maintain consistency across all pages and components
+4. Consider the local Horsforth/Leeds context when choosing terms
+
+## Examples in Code
+
+```tsx
+// ✅ Correct British English
+<p>We organise community planting events throughout the year.</p>
+<p>The wildflower meadows provide beautiful colour in summer.</p>
+<p>Our volunteers work in the town centre and surrounding areas.</p>
+
+// ❌ Incorrect American English
+<p>We organize community planting events throughout the year.</p>
+<p>The wildflower meadows provide beautiful color in summer.</p>
+<p>Our volunteers work in the town center and surrounding areas.</p>
+```

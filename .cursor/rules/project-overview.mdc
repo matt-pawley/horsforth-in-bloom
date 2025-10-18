@@ -1,0 +1,27 @@
+---
+alwaysApply: true
+---
+
+# Horsforth in Bloom - Project Overview
+
+This is a Next.js 15 website for Horsforth in Bloom, a community volunteer group. The site uses modern React 19 features, Tailwind CSS v4, and shadcn/ui components.
+
+## Core Technologies
+- **Framework**: Next.js 15 with App Router
+- **React**: React 19 with modern features
+- **Styling**: Tailwind CSS v4
+- **UI Components**: shadcn/ui
+- **Icons**: Lucide React
+- **TypeScript**: Full TypeScript support
+
+## Project Structure
+- `src/app/` - Next.js App Router pages and layouts
+- `src/components/` - Reusable React components
+- `src/components/ui/` - shadcn/ui components
+- `public/` - Static assets (images, PDFs, etc.)
+
+## Brand Colors
+- **Orange**: `orange-400` - Primary actions, highlights, main brand color
+- **Pink**: `pink-500` - Secondary elements, special highlights  
+- **Green**: `green-400` - Nature/sustainability themes, accents
+- Use subtle backgrounds: `bg-orange-50`, `bg-green-50`, `bg-pink-50`

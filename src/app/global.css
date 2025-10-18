@@ -1,6 +1,9 @@
 @import 'tailwindcss';
 
 @layer base {
+  html {
+    scroll-padding-top: 6rem; /* 96px - height of sticky header */
+  }
   :root {
     --background: 0 0% 100%;
     --foreground: 0 0% 3.9%;

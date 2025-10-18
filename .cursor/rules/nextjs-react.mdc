@@ -1,0 +1,41 @@
+---
+globs: *.tsx,*.ts,*.jsx,*.js
+---
+
+# Next.js 15 & React 19 Guidelines
+
+## Next.js 15 App Router
+- Use Server Components by default, Client Components only when necessary
+- Use `"use client"` directive only when needed for interactivity
+- Leverage Next.js 15 App Router features (metadata, layouts, etc.)
+- Use Next.js `Image` component for all images with proper `alt` attributes
+- Use Next.js `Link` component for internal navigation
+- Export metadata from page components for SEO
+
+## React 19 Modern Features
+- Use functional components with TypeScript
+- Export as default for page components
+- Use proper TypeScript interfaces for props
+- Leverage modern React patterns and hooks
+- Prefer composition over inheritance
+
+## Component Structure
+```tsx
+export default function PageName() {
+  return (
+    <div className="min-h-screen">
+      <section className="bg-[color]-50 py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Content */}
+        </div>
+      </section>
+    </div>
+  );
+}
+```
+
+## Performance
+- Use Next.js Image optimization
+- Implement proper loading states
+- Optimize for Core Web Vitals
+- Use appropriate `priority` prop for above-the-fold images

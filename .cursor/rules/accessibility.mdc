@@ -1,0 +1,60 @@
+---
+globs: *.tsx,*.ts,*.jsx,*.js
+---
+
+# Accessibility Best Practices
+
+## Image Accessibility
+- Always include proper `alt` attributes for images
+- Use descriptive alt text that conveys meaning
+- Use Next.js `Image` component for optimization
+
+## Semantic HTML
+- Use semantic HTML elements (`header`, `main`, `section`, `article`, `footer`)
+- Ensure proper heading hierarchy (h1, h2, h3, etc.)
+- Use appropriate form elements and labels
+
+## Interactive Elements
+- Include `aria-label` for interactive elements without visible text
+- Use `sr-only` class for screen reader only content
+- Ensure keyboard navigation works properly
+- Use proper focus management
+
+## Dialog Accessibility
+- Always include `DialogTitle` for screen readers
+- Use `sr-only` class when title is visually hidden
+- Ensure proper focus trapping
+
+## Examples
+```tsx
+// Proper image with alt text
+<Image
+  src="/volunteers.jpg"
+  alt="Horsforth in Bloom volunteers working in the community"
+  width={600}
+  height={400}
+  className="rounded-lg shadow-lg"
+  priority
+/>
+
+// Accessible dialog
+<DialogContent>
+  <DialogTitle className="sr-only">
+    Image Gallery for {siteName}
+  </DialogTitle>
+  {/* Content */}
+</DialogContent>
+
+// Proper button with aria-label
+<button
+  aria-label="Close dialog"
+  className="absolute top-4 right-4"
+>
+  <X className="h-4 w-4" />
+</button>
+```
+
+## Color Contrast
+- Ensure sufficient color contrast ratios
+- Don't rely solely on color to convey information
+- Test with screen readers and keyboard navigation

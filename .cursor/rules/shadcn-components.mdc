@@ -1,0 +1,45 @@
+---
+globs: *.tsx,*.ts
+---
+
+# shadcn/ui Component Usage
+
+## shadcn/ui Guidelines
+- Always use shadcn/ui components when available
+- Import from `@/components/ui/` directory
+- Use proper component variants and sizes
+- Follow shadcn/ui patterns for customization
+
+## Common Components
+- **Button**: Use `asChild` prop with Next.js Link
+- **Dialog**: Use `DialogContent` with `DialogTitle` for accessibility
+- **Icons**: Use Lucide React icons consistently
+
+## Button Usage
+```tsx
+<Button asChild size="lg" className="bg-orange-400 hover:bg-orange-400/90">
+  <Link href="/contact">Get Involved</Link>
+</Button>
+
+<Button variant="outline" size="sm" className="border-pink-500 text-pink-500 hover:bg-pink-500 hover:text-white">
+  <Link href="/facebook">Follow us</Link>
+</Button>
+```
+
+## Dialog Usage
+```tsx
+<Dialog open={isOpen} onOpenChange={setIsOpen}>
+  <DialogContent className="max-w-6xl w-full h-[95vh] p-0">
+    <DialogTitle className="sr-only">
+      Image Gallery for {siteName}
+    </DialogTitle>
+    {/* Content */}
+  </DialogContent>
+</Dialog>
+```
+
+## Component Import Pattern
+```tsx
+import { Button } from '@/components/ui/button'
+import { Dialog, DialogContent, DialogTitle } from '@/components/ui/dialog'
+```
