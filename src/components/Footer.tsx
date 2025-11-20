@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Facebook, Mail, Phone } from "lucide-react";
+import { SOCIAL_LINKS, CONTACT_INFO } from "@/lib/constants";
 
 export default function Footer() {
   return (
@@ -70,25 +71,25 @@ export default function Footer() {
               <div className="flex items-center space-x-2">
                 <Mail className="h-4 w-4 text-orange-400" />
                 <a
-                  href="mailto:horsforthinbloom@gmail.com"
+                  href={`mailto:${CONTACT_INFO.email}`}
                   className="text-gray-600 hover:text-orange-400 transition-colors text-sm"
                 >
-                  horsforthinbloom@gmail.com
+                  {CONTACT_INFO.email}
                 </a>
               </div>
               <div className="flex items-center space-x-2">
                 <Phone className="h-4 w-4 text-orange-400" />
                 <a
-                  href="tel:0777093594"
+                  href={`tel:${CONTACT_INFO.phone}`}
                   className="text-gray-600 hover:text-orange-400 transition-colors text-sm"
                 >
-                  Peter Mallott: 0770 935940
+                  {CONTACT_INFO.phoneDisplay}
                 </a>
               </div>
               <div className="flex items-center space-x-2">
                 <Facebook className="h-4 w-4 text-pink-500" />
                 <a
-                  href="https://www.facebook.com/HorsforthInBloom"
+                  href={SOCIAL_LINKS.facebook}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-600 hover:text-pink-500 transition-colors text-sm"

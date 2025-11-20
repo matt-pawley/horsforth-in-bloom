@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Facebook, Menu, X } from "lucide-react";
+import { SOCIAL_LINKS } from "@/lib/constants";
 
 export default function Header() {
   const pathname = usePathname();
@@ -113,7 +114,7 @@ export default function Header() {
               className="border-pink-500 text-pink-500 hover:bg-pink-500 hover:text-white shadow-md hover:shadow-lg transition-all duration-200"
             >
               <Link
-                href="https://www.facebook.com/HorsforthInBloom"
+                href={SOCIAL_LINKS.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center space-x-2"
@@ -207,7 +208,7 @@ export default function Header() {
                   className="w-full border-pink-500 text-pink-500 hover:bg-pink-500 hover:text-white"
                 >
                   <Link
-                    href="https://www.facebook.com/HorsforthInBloom"
+                    href={SOCIAL_LINKS.facebook}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center justify-center space-x-2"

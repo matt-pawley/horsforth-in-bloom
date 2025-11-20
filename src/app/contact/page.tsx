@@ -1,5 +1,6 @@
 import { Mail, Phone, Facebook, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { SOCIAL_LINKS, CONTACT_INFO } from "@/lib/constants";
 
 export const metadata = {
   title: "Contact Us - Horsforth in Bloom",
@@ -54,10 +55,10 @@ export default function Contact() {
                       possible.
                     </p>
                     <a
-                      href="mailto:horsforthinbloom@gmail.com"
+                      href={`mailto:${CONTACT_INFO.email}`}
                       className="text-orange-400 hover:text-orange-400/80 transition-colors font-medium"
                     >
-                      horsforthinbloom@gmail.com
+                      {CONTACT_INFO.email}
                     </a>
                   </div>
                 </div>
@@ -77,10 +78,10 @@ export default function Contact() {
                       Speak directly with Peter Mallott, our group coordinator.
                     </p>
                     <a
-                      href="tel:0777093594"
+                      href={`tel:${CONTACT_INFO.phone}`}
                       className="text-green-400 hover:text-green-400/80 transition-colors font-medium"
                     >
-                      0770 935940
+                      {CONTACT_INFO.phoneDisplay}
                     </a>
                   </div>
                 </div>
@@ -101,12 +102,12 @@ export default function Contact() {
                       community.
                     </p>
                     <a
-                      href="https://www.facebook.com/HorsforthInBloom"
+                      href={SOCIAL_LINKS.facebook}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-pink-500 hover:text-pink-500/80 transition-colors font-medium"
                     >
-                      @HorsforthInBloom
+                      Join our Facebook group
                     </a>
                   </div>
                 </div>
@@ -136,7 +137,9 @@ export default function Contact() {
                     size="lg"
                     className="w-full bg-orange-400 hover:bg-orange-400/90"
                   >
-                    <a href="mailto:horsforthinbloom@gmail.com?subject=Volunteer Interest">
+                    <a
+                      href={`mailto:${CONTACT_INFO.email}?subject=Volunteer Interest`}
+                    >
                       Send us an email
                     </a>
                   </Button>
@@ -147,7 +150,7 @@ export default function Contact() {
                     className="w-full border-pink-500 text-pink-500 hover:bg-pink-500 hover:text-white"
                   >
                     <a
-                      href="https://www.facebook.com/HorsforthInBloom"
+                      href={SOCIAL_LINKS.facebook}
                       target="_blank"
                       rel="noopener noreferrer"
                     >

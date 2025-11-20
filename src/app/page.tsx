@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Facebook, Link as LinkIcon } from "lucide-react";
+import { SOCIAL_LINKS } from "@/lib/constants";
 
 export default function Home() {
   const awards = [
@@ -54,7 +55,7 @@ export default function Home() {
                   className="border-pink-500 text-pink-500 hover:bg-pink-500 hover:text-white"
                 >
                   <Link
-                    href="https://www.facebook.com/HorsforthInBloom"
+                    href={SOCIAL_LINKS.facebook}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -191,7 +192,7 @@ export default function Home() {
                 className="border-pink-500 text-pink-500 hover:bg-pink-500 hover:text-white"
               >
                 <Link
-                  href="https://www.facebook.com/HorsforthInBloom"
+                  href={SOCIAL_LINKS.facebook}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
