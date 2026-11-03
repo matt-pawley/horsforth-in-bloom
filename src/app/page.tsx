@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Facebook, Link as LinkIcon } from "lucide-react";
+import { Facebook, Instagram, Link as LinkIcon } from "lucide-react";
 import { SOCIAL_LINKS } from "@/lib/constants";
 
 export default function Home() {
@@ -63,6 +63,23 @@ export default function Home() {
                     Follow us on Facebook
                   </Link>
                 </Button>
+                {SOCIAL_LINKS.instagram ? (
+                  <Button
+                    asChild
+                    variant="outline"
+                    size="lg"
+                    className="border-pink-500 text-pink-700 hover:bg-pink-50"
+                  >
+                    <a
+                      href={SOCIAL_LINKS.instagram}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Instagram aria-hidden="true" className="h-4 w-4 mr-2" />
+                      Follow us on Instagram
+                    </a>
+                  </Button>
+                ) : null}
               </div>
             </div>
             <div className="relative">

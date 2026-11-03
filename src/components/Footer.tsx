@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { Facebook, Mail, Phone } from "lucide-react";
-import { SOCIAL_LINKS, CONTACT_INFO } from "@/lib/constants";
+import { Facebook, Instagram, Mail } from "lucide-react";
+import { SOCIAL_LINKS, CONTACT_INFO, NAV_LINKS } from "@/lib/constants";
 
 export default function Footer() {
   return (
@@ -10,8 +10,8 @@ export default function Footer() {
           {/* About */}
           <div>
             <h3 className="text-lg font-semibold text-gray-900 mb-4">
-              <span className="text-orange-400">Horsforth</span> in{" "}
-              <span className="text-green-400">Bloom</span>
+              <span className="text-orange-700">Horsforth</span> in{" "}
+              <span className="text-green-700">Bloom</span>
             </h3>
             <p className="text-gray-600 text-sm">
               Our volunteers meet on Wednesday afternoons to plant and maintain
@@ -24,79 +24,61 @@ export default function Footer() {
           {/* Quick Links */}
           <div>
             <h3 className="text-lg font-semibold text-gray-900 mb-4">
-              <span className="text-pink-500">Quick</span> Links
+              <span className="text-pink-700">Quick</span> Links
             </h3>
             <ul className="space-y-2">
-              <li>
-                <Link
-                  href="/"
-                  className="text-gray-600 hover:text-orange-400 transition-colors text-sm"
-                >
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/sustainability"
-                  className="text-gray-600 hover:text-orange-400 transition-colors text-sm"
-                >
-                  Sustainability
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/sites"
-                  className="text-gray-600 hover:text-orange-400 transition-colors text-sm"
-                >
-                  Sites Covered
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/contact"
-                  className="text-gray-600 hover:text-orange-400 transition-colors text-sm"
-                >
-                  Contact
-                </Link>
-              </li>
+              {NAV_LINKS.map(({ href, label }) => (
+                <li key={href}>
+                  <Link
+                    href={href}
+                    className="text-gray-600 hover:text-orange-700 transition-colors text-sm"
+                  >
+                    {label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* Contact Info */}
           <div>
             <h3 className="text-lg font-semibold text-gray-900 mb-4">
-              Get in <span className="text-green-400">Touch</span>
+              Get in <span className="text-green-700">Touch</span>
             </h3>
             <div className="space-y-3">
               <div className="flex items-center space-x-2">
-                <Mail className="h-4 w-4 text-orange-400" />
+                <Mail className="h-4 w-4 text-orange-700" />
                 <a
                   href={`mailto:${CONTACT_INFO.email}`}
-                  className="text-gray-600 hover:text-orange-400 transition-colors text-sm"
+                  className="text-gray-600 hover:text-orange-700 transition-colors text-sm"
                 >
                   {CONTACT_INFO.email}
                 </a>
               </div>
               <div className="flex items-center space-x-2">
-                <Phone className="h-4 w-4 text-orange-400" />
-                <a
-                  href={`tel:${CONTACT_INFO.phone}`}
-                  className="text-gray-600 hover:text-orange-400 transition-colors text-sm"
-                >
-                  {CONTACT_INFO.phoneDisplay}
-                </a>
-              </div>
-              <div className="flex items-center space-x-2">
-                <Facebook className="h-4 w-4 text-pink-500" />
+                <Facebook className="h-4 w-4 text-pink-700" />
                 <a
                   href={SOCIAL_LINKS.facebook}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-600 hover:text-pink-500 transition-colors text-sm"
+                  className="text-gray-600 hover:text-pink-700 transition-colors text-sm"
                 >
                   Follow us on Facebook
                 </a>
               </div>
+              {SOCIAL_LINKS.instagram ? (
+                <div className="flex items-center space-x-2">
+                  <Instagram className="h-4 w-4 text-pink-700" />
+                  <a
+                    href={SOCIAL_LINKS.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-600 hover:text-pink-700 text-sm"
+                  >
+                    Follow us on Instagram
+                  </a>
+                </div>
+              ) : null}
             </div>
           </div>
         </div>
@@ -111,7 +93,7 @@ export default function Footer() {
               Visit our{" "}
               <Link
                 href="/contact#links"
-                className="text-orange-400 hover:underline"
+                className="text-orange-700 hover:underline"
               >
                 useful links section
               </Link>{" "}

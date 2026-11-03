@@ -14,7 +14,7 @@ export default function Sustainability() {
       icon: Leaf,
       title: "Wildflower Meadows",
       description:
-        "We're creating beautiful wildflower type planting that provide year-round habitat for pollinators and wildlife, while requiring minimal maintenance.",
+        "We're creating beautiful wildflower type planting that provides year-round habitat for pollinators and wildlife, while requiring minimal maintenance. Rather than relying on strimmers, which often use plastic cutting lines and petrol-powered engines, we've embraced the traditional art of scything. It's a quieter, more sustainable way to manage our wildflower patches, helping us care for nature while minimising our environmental impact.",
     },
     {
       icon: Sprout,

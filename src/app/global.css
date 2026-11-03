@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @layer base {
   html {
@@ -25,7 +25,7 @@
     --input: 0 0% 89.8%;
     --ring: 0 0% 3.9%;
     --radius: 0.5rem;
-    
+
     /* Horsforth in Bloom custom colors */
     --color-horsforth-orange: #e68a44;
     --color-horsforth-pink: #d0388d;
@@ -63,3 +63,14 @@
     @apply bg-background text-foreground;
   }
 } */
+
+@layer base {
+  :where(a, button, summary):focus-visible {
+    outline: 2px solid #166534;
+    outline-offset: 4px;
+  }
+  section[id],
+  article[id] {
+    scroll-margin-top: 7rem;
+  }
+}

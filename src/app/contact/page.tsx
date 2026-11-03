@@ -1,12 +1,12 @@
-import { Mail, Phone, Facebook, MapPin } from "lucide-react";
+import { Mail, Facebook, Instagram, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SOCIAL_LINKS, CONTACT_INFO } from "@/lib/constants";
 
 export const metadata = {
   title: "Contact Us - Horsforth in Bloom",
   description:
-    "Get in touch with Horsforth in Bloom. Contact us via email, phone, or Facebook to learn more about volunteering opportunities.",
-  keywords: "contact, volunteer, Horsforth in Bloom, email, phone, Facebook",
+    "Get in touch with Horsforth in Bloom. Contact us via email or Facebook to learn more about volunteering opportunities.",
+  keywords: "contact, volunteer, Horsforth in Bloom, email, Facebook",
 };
 
 export default function Contact() {
@@ -35,7 +35,7 @@ export default function Contact() {
             {/* Contact Details */}
             <div>
               <h2 className="text-3xl font-bold text-gray-900 mb-8">
-                Contact <span className="text-green-400">Information</span>
+                Contact <span className="text-green-700">Information</span>
               </h2>
 
               <div className="space-y-8">
@@ -43,7 +43,7 @@ export default function Contact() {
                 <div className="flex items-start space-x-4">
                   <div className="flex-shrink-0">
                     <div className="w-12 h-12 bg-orange-400/10 rounded-full flex items-center justify-center">
-                      <Mail className="h-6 w-6 text-orange-400" />
+                      <Mail className="h-6 w-6 text-orange-700" />
                     </div>
                   </div>
                   <div>
@@ -56,32 +56,9 @@ export default function Contact() {
                     </p>
                     <a
                       href={`mailto:${CONTACT_INFO.email}`}
-                      className="text-orange-400 hover:text-orange-400/80 transition-colors font-medium"
+                      className="text-orange-700 hover:text-orange-700/80 transition-colors font-medium break-all"
                     >
                       {CONTACT_INFO.email}
-                    </a>
-                  </div>
-                </div>
-
-                {/* Phone */}
-                <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0">
-                    <div className="w-12 h-12 bg-green-400/10 rounded-full flex items-center justify-center">
-                      <Phone className="h-6 w-6 text-green-400" />
-                    </div>
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                      Call Us
-                    </h3>
-                    <p className="text-gray-600 mb-3">
-                      Speak directly with Peter Mallott, our group coordinator.
-                    </p>
-                    <a
-                      href={`tel:${CONTACT_INFO.phone}`}
-                      className="text-green-400 hover:text-green-400/80 transition-colors font-medium"
-                    >
-                      {CONTACT_INFO.phoneDisplay}
                     </a>
                   </div>
                 </div>
@@ -90,7 +67,7 @@ export default function Contact() {
                 <div className="flex items-start space-x-4">
                   <div className="flex-shrink-0">
                     <div className="w-12 h-12 bg-pink-500/10 rounded-full flex items-center justify-center">
-                      <Facebook className="h-6 w-6 text-pink-500" />
+                      <Facebook className="h-6 w-6 text-pink-700" />
                     </div>
                   </div>
                   <div>
@@ -105,12 +82,36 @@ export default function Contact() {
                       href={SOCIAL_LINKS.facebook}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-pink-500 hover:text-pink-500/80 transition-colors font-medium"
+                      className="text-pink-700 hover:text-pink-700/80 transition-colors font-medium"
                     >
                       Join our Facebook group
                     </a>
                   </div>
                 </div>
+                {SOCIAL_LINKS.instagram ? (
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 shrink-0 bg-pink-50 rounded-full flex items-center justify-center">
+                      <Instagram className="h-6 w-6 text-pink-700" />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                        Follow Us on Instagram
+                      </h3>
+                      <p className="text-gray-600 mb-3">
+                        Follow us on Instagram. Stay connected with updates,
+                        inspiration and news.
+                      </p>
+                      <a
+                        href={SOCIAL_LINKS.instagram}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-pink-700 hover:underline font-medium"
+                      >
+                        Visit our Instagram
+                      </a>
+                    </div>
+                  </div>
+                ) : null}
               </div>
             </div>
 
@@ -129,7 +130,8 @@ export default function Contact() {
                   you're an experienced gardener or just starting out, there's a
                   place for you in our community. We provide all the guidance
                   you need, just bring along your favourite hand tools and
-                  gloves.
+                  gloves. We meet each Wednesday afternoon from 1.30pm to
+                  approx. 3.00pm throughout the year, weather dependent.
                 </p>
                 <div className="space-y-4">
                   <Button
@@ -147,7 +149,7 @@ export default function Contact() {
                     asChild
                     variant="outline"
                     size="lg"
-                    className="w-full border-pink-500 text-pink-500 hover:bg-pink-500 hover:text-white"
+                    className="w-full border-pink-500 text-pink-700 hover:bg-pink-500 hover:text-white"
                   >
                     <a
                       href={SOCIAL_LINKS.facebook}
@@ -166,7 +168,7 @@ export default function Contact() {
                 <div className="flex items-start space-x-4">
                   <div className="flex-shrink-0">
                     <div className="w-12 h-12 bg-green-400/10 rounded-full flex items-center justify-center">
-                      <MapPin className="h-6 w-6 text-green-400" />
+                      <MapPin className="h-6 w-6 text-green-700" />
                     </div>
                   </div>
                   <div>
@@ -176,8 +178,7 @@ export default function Contact() {
                     <p className="text-gray-600">
                       We meet at different locations across Horsforth, please
                       use the contact details to find out where we will be
-                      working next. We meet each Wednesday afternoon from 1.30pm
-                      to approx. 3.00pm throughout the year, weather dependent.
+                      working next.
                     </p>
                   </div>
                 </div>
@@ -195,7 +196,7 @@ export default function Contact() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Useful <span className="text-green-400">Links</span>
+              Useful <span className="text-green-700">Links</span>
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Explore these helpful resources for community groups, wildlife
@@ -325,14 +326,15 @@ export default function Contact() {
                 </Button>
               </div>
 
-              {/* Leeds Council Parks Strategy */}
+              {/* Leeds Parks and Green Spaces Forum */}
               <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow flex flex-col">
                 <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                  Leeds Parks & Green Spaces Strategy
+                  Leeds Parks and Green Spaces Forum
                 </h3>
                 <p className="text-gray-600 text-sm mb-4 flex-grow">
-                  Leeds City Council's strategy for parks and green spaces
-                  development
+                  The Leeds Parks and Green Spaces Forum is a voluntary
+                  organisation made up of individuals, groups and organisations
+                  interested in enhancing the green spaces of Leeds.
                 </p>
                 <Button
                   asChild
@@ -340,11 +342,11 @@ export default function Contact() {
                   className="w-full bg-pink-500 hover:bg-pink-500/90 mt-auto"
                 >
                   <a
-                    href="https://www.leeds.gov.uk/plans-and-strategies/parks-and-green-spaces-strategy"
+                    href="https://leedsparksforum.org"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Visit Parks Strategy
+                    Visit Parks Forum
                   </a>
                 </Button>
               </div>
