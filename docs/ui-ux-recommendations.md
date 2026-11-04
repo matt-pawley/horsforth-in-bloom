@@ -1,43 +1,33 @@
-# UI and UX refinement recommendations
+# UI and UX review — 4 November 2026
 
-Reviewed on 3 November 2026 using the UI Taste, React Best Practices and Web Design Guidelines skills. Preserve the recognisable flower logo and orange, green and pink identity. The strongest next step is a clearer community website with stronger photography, simpler page hierarchy and easier routes to volunteering, visiting sites and sponsorship.
+The full seven-page website was reviewed with UI Taste, Better UI, React Best Practices and Web Design Guidelines. A separate design critic reviewed the rendered desktop and mobile screenshots; its actionable feedback has been implemented. Website copy was preserved throughout this visual pass.
 
-These are recommendations for a subsequent design pass. Cheryl's content changes have been implemented without replacing the overall visual identity.
+## Completed
 
-## Recommended priorities
+- Unified typography, warm paper surfaces, forest text and restrained orange/pink brand details. Corrected the Inter font binding for Tailwind v4.
+- Reworked the home page around real volunteer photography, clearer actions, an editorial introduction, compact awards and a distinct volunteering section.
+- Reduced header height, clarified the active page, and improved mobile menu spacing, Escape handling and outside-click dismissal.
+- Refined all page introductions, content spacing, photography, buttons, borders and keyboard focus. Preserved the chronological History timeline and year navigation.
+- Kept the Sites map in its full-width container, bounded its height and added a control for opening the complete image.
+- Simplified gallery category navigation and photo controls; refined the enlarged-photo dialog.
+- Moved social links into the footer on every screen size. Corrected the mobile disclosure position and white-panel hover/focus contrast.
+- Improved Contact resources, Sustainability sections and Sponsorship layout without rewriting their text.
+- Respected reduced-motion settings and retained comfortable touch targets.
 
-| Priority | Location | Finding and suggested change |
-| --- | --- | --- |
-| P2 | `src/app/page.tsx:49` | “Get Involved” sends everyone to a general Contact page. Make the principal action “Join a Wednesday working party”, show the existing Wednesday 1.30–3pm arrangement beside it, and link directly to the volunteer section. Keep a clear secondary action for exploring sites and a separate sponsorship route. |
-| P2 | `src/app/page.tsx:100` | The long introduction, awards and second volunteer section repeat ideas before giving practical joining information. Condense the introduction, put a short “How to join” section earlier, and reduce the awards to a smaller supporting strip. Preserve the supplied facts and images. |
-| P2 | `src/app/sites/page.tsx:15` | The requested full-width map is a tall portrait image and pushes the first site a long way down the page. Keep the full-width presentation, add an alphabetical jump list above it, then replace it with Stuart's interactive map when supplied. Make keyboard and text access to the locations available alongside the interactive view. |
-| P2 | `src/app/sites/page.tsx:55` | Sixteen large cards create a very long page. Keep one main photograph per site as requested, but reduce the border/shadow treatment, vary spacing deliberately, and use shorter introductory summaries with the full supplied descriptions still available. A jump list is the first improvement; filters would only be useful if people need them. |
-| P2 | `src/app/contact/page.tsx:34` | Contact details appear before the practical volunteering block on mobile. Give the page an immediate “Volunteer”, “Sponsorship” and “General enquiry” choice, with meeting arrangements and a clearly labelled email action for volunteering first. Move the large useful-links directory below these tasks. |
-| P2 | `src/app/history/page.tsx:49` | A vertical timeline, milestone headings, grouped photographs and a year index with a current-year indication have now been implemented. Incorporate Daniella's additional timeline content when it arrives, preserving the chronological reading order and mobile layout. |
-| P2 | `src/app/sustainability/page.tsx:110` | Six equal icon cards give practical information and broad statements the same visual weight. Use photographs and a few clear sections for perennial planting, peat-free growing, scything and composting. Connect each practice to a real local site. |
-| P2 | `src/app/page.tsx:104`, `src/app/sustainability/page.tsx:95` | Some untouched text still uses the light decorative brand shades. Review the actual rendered foreground/background combinations, use darker text variants, and reserve the lighter colours for surfaces and accents. Text in the changed Contact, footer and new pages already uses darker variants. A complete contrast audit remains outstanding. |
-| P3 | Shared page layouts | The repeated large pastel introductions and heavy card shadows make pages feel uniform. Keep the brand palette, but use a more deliberate type scale, narrower text measures and lighter dividers. Let real photographs and clear section headings do more of the work. |
+## Verification
 
-## Sponsorship improvements once information arrives
+- Production webpack build and TypeScript passed.
+- Biome checks passed for every changed source file; git whitespace checks passed.
+- All seven pages inspected at 390 × 844 and 1440 × 1000, with additional layout checks at widths 320, 768 and 1024. No horizontal page overflow, broken loaded images or missing in-page anchor targets were found.
+- Mobile menu open/close, Escape and focus return verified. Gallery arrow-key navigation, Escape and focus restoration verified. Social disclosure open state verified on mobile. Desktop map now fits a 560px-high viewer.
+- Automated comparison confirmed unchanged body copy on all seven pages before applying any subsequent email requests.
 
-Keep “Enquire about sponsorship” as the clear action. Add approved bank details only when supplied, and add sponsor logos only if Cheryl confirms they are needed. If she later supplies planter availability and prices, a concise explanation of the sponsorship options would make the enquiry easier. Do not invent tiers, prices, testimonials or impact statistics.
+## Remaining information-dependent work
 
-## Usability improvements included with the content work
+See [information-to-collect.md](information-to-collect.md) for the outstanding supplied-content requests. An interactive map, further historical material and replacement photographs can be incorporated when received. Changes to calls to action or information hierarchy that require rewriting copy remain outside this visual pass.
 
-- Shared navigation now consistently includes Our Sites, Sponsorship and Gallery, with Gallery between History and Contact Us.
-- Mobile navigation has an accessible name, expanded state, larger touch target and a current-page indication.
-- Added a skip link, `en-GB` language declaration and visible keyboard focus styling.
-- Gallery images have named buttons, arrow-key navigation, Escape-to-close and focus restoration to the selected photograph.
-- Gallery groups have direct anchors from Our Sites and a jump list on the Gallery page.
-- Photo selections now use a stable explicit ordering instead of relying on filesystem discovery.
-- The social pop-out sits in normal page flow on mobile so it cannot cover contact links. Desktop retains the floating control.
-- Missing Instagram and donation details do not produce dead controls or blank fields.
-- Corrected the map's intrinsic dimensions to reserve the proper aspect ratio before loading.
+This review used browser emulation, not physical touch devices or a screen reader. It does not constitute a full accessibility or performance certification.
 
-## Evidence and limits
+## Latest email actioned
 
-The running local production build was inspected in Chrome at 1353 × 675 and 390 × 844 CSS pixels. Inspection covered the existing home page, the revised Our Sites and Contact pages, the new Sponsorship page, the illustrated History page, Gallery thumbnails and the enlarged-photo dialog. Mobile navigation, gallery keyboard navigation, Escape closing, focus restoration and the social disclosure were exercised. The home page had no horizontal overflow at 390 CSS pixels.
-
-This was a focused review, not a full accessibility or performance certification. Physical touch devices, screen-reader output, all colour combinations and constrained-network performance were not tested. The recommendations about information hierarchy and visual style are design judgements, not claims of measured conversion gains.
-
-Reference: [Vercel Web Interface Guidelines](https://raw.githubusercontent.com/vercel-labs/web-interface-guidelines/main/command.md).
+After the visual review, Cheryl’s 4 November email supplied Penny’s extended history. Added the 2024, 2025 and 2026 milestones, all five accompanying images and matching year navigation. The existing history through 2023 was retained. This is the only website copy change following the copy-preservation check.

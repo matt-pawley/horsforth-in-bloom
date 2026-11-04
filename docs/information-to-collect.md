@@ -1,6 +1,6 @@
 # Information to collect for the website
 
-Cheryl's documents were reviewed and the available content implemented on 3 November 2026. The items below are needed to finish the remaining changes.
+Cheryl's initial documents were implemented on 3 November 2026. Her latest email, received on 4 November 2026 at 16:10, has also been actioned: Penny's additional 2024–2026 history and all five new images have been added to the timeline. The items below are needed to finish the remaining changes.
 
 ## Links and donations
 
@@ -13,7 +13,7 @@ Cheryl's documents were reviewed and the available content implemented on 3 Nove
 - [ ] **Cheryl — Bulb Planting:** supply the replacement main photograph. The current photograph remains for now.
 - [ ] **Cheryl — Crabtree Land:** supply the replacement main photograph. The current photograph remains for now.
 - [ ] **Cheryl — Hall Park Leafmould and Compost Bins:** supply photographs and identify the main one. The new section currently displays its supplied text without a placeholder photograph.
-- [ ] **Daniella — history timeline:** supply the promised timeline and any accompanying assets. Penny's complete illustrated history has been added; Daniella's separate contribution is still outstanding.
+- [ ] **Daniella — history timeline:** supply the promised timeline and any accompanying assets. Penny's illustrated history, including her 4 November update through 2026, has been added; Daniella's separate contribution is still outstanding.
 - [ ] **Cheryl — sponsors:** confirm whether names alone or logos are wanted. If logos are required, supply the seven approved logos and any destination URLs. The supplied sponsor names are displayed as a plain list in the meantime.
 - [ ] **Cheryl — site names:** confirm any further renames mentioned in the notes. The names already specified have been applied and the list is alphabetical.
 
@@ -37,3 +37,5 @@ These do not block further work:
 - [HiB Website Changes Oct 2026](https://docs.google.com/document/d/1gMVDXuqKBk1AncpM9sSbPLlyaCE0UlXjezW4IqPkBLo/edit)
 - [Website Sponsorship](https://docs.google.com/document/d/1f4BA4ZaBLnfUJwnMiM0LWBj5Yj-Qoo2Hzb31WWwnr_E/edit)
 - [Penny's history attachment forwarded by Cheryl](https://mail.google.com/mail/u/?authuser=matthew.james.pawley%40gmail.com#all/1a19cf779b643304)
+
+- [Updated history forwarded by Cheryl on 4 November 2026](https://mail.google.com/mail/u/?authuser=matthew.james.pawley%40gmail.com#all/1a1a753f1ea515e8)

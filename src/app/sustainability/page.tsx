@@ -1,4 +1,5 @@
-import { Leaf, Recycle, Heart, Sprout, Target, Users } from "lucide-react";
+import { Heart, Leaf, Recycle, Sprout, Target, Users } from "lucide-react";
+import Image from "next/image";
 
 export const metadata = {
   title: "Sustainability - Horsforth in Bloom",
@@ -51,13 +52,13 @@ export default function Sustainability() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-pink-50 py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Our <span className="text-pink-500">Sustainable</span> Approach
+      <section className="page-hero">
+        <div className="site-container">
+          <div className="max-w-3xl">
+            <h1 className="page-title">
+              Our <span className="text-forest">Sustainable</span> Approach
             </h1>
-            <p className="text-xl text-gray-700 leading-relaxed">
+            <p className="page-intro">
               Horsforth in Bloom is committed to creating beautiful, sustainable
               planting that benefit both our community and the environment for
               years to come.
@@ -67,13 +68,13 @@ export default function Sustainability() {
       </section>
 
       {/* Main Content */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto">
-            <div className="prose prose-lg max-w-none text-gray-700">
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">
+      <section className="section-space">
+        <div className="site-container grid lg:grid-cols-[1.2fr_.8fr] gap-10 lg:gap-16 items-start">
+          <div className="max-w-3xl">
+            <div className="prose-body">
+              <h2 className="section-title mb-6">
                 Moving Beyond{" "}
-                <span className="text-pink-500">Annual Bedding</span>
+                <span className="text-forest">Annual Bedding</span>
               </h2>
               <p className="mb-6">
                 Traditional annual bedding displays, while beautiful, require
@@ -91,8 +92,8 @@ export default function Sustainability() {
                 suit the conditions they are growing in.
               </p>
 
-              <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">
-                The <span className="text-orange-400">Benefits</span> of Our
+              <h3 className="text-2xl font-semibold text-forest mb-4 mt-10">
+                The <span className="text-forest">Benefits</span> of Our
                 Approach
               </h3>
               <p className="mb-6">
@@ -101,27 +102,33 @@ export default function Sustainability() {
               </p>
             </div>
           </div>
+          <div className="relative aspect-[16/9] lg:aspect-[4/5] content-photo overflow-hidden">
+            <Image
+              src="/sites/Old Burial Ground /007.jpg"
+              alt=""
+              fill
+              sizes="(max-width: 1023px) 100vw, 480px"
+              className="object-cover"
+            />
+          </div>
         </div>
       </section>
 
       {/* Benefits Grid */}
-      <section className="py-16 bg-gradient-to-br from-green-400/5 to-orange-400/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <section className="section-space pt-0">
+        <div className="site-container">
+          <div className="practice-grid">
             {benefits.map((benefit) => (
-              <div
-                key={benefit.title}
-                className="bg-white rounded-lg shadow-md p-8 hover:shadow-lg transition-shadow"
-              >
-                <div className="flex items-center mb-4">
-                  <div className="flex items-center justify-center w-12 h-12 bg-green-400/10 rounded-full mr-4">
-                    <benefit.icon className="h-6 w-6 text-green-400" />
+              <div key={benefit.title} className="practice-item">
+                <div className="flex items-start gap-4 mb-5">
+                  <div className="flex items-center justify-center w-11 h-11 shrink-0 bg-mist rounded-xl">
+                    <benefit.icon className="h-6 w-6 text-forest" />
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900">
+                  <h3 className="text-xl font-semibold text-forest pt-1.5">
                     {benefit.title}
                   </h3>
                 </div>
-                <div className="text-gray-700">
+                <div className="prose-body">
                   {benefit.description.split("\n\n").map((paragraph, index) => (
                     <p
                       key={`${benefit.title}-paragraph-${index}`}

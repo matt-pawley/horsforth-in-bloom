@@ -1,19 +1,20 @@
-import Link from "next/link";
 import { Facebook, Instagram, Mail } from "lucide-react";
-import { SOCIAL_LINKS, CONTACT_INFO, NAV_LINKS } from "@/lib/constants";
+import Link from "next/link";
+import SocialLinks from "@/components/SocialLinks";
+import { CONTACT_INFO, NAV_LINKS, SOCIAL_LINKS } from "@/lib/constants";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-50 border-t border-orange-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <footer className="site-footer">
+      <div className="site-container py-12 sm:py-16">
+        <div className="footer-grid">
           {/* About */}
           <div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-4">
-              <span className="text-orange-700">Horsforth</span> in{" "}
-              <span className="text-green-700">Bloom</span>
+            <h3 className="font-semibold mb-4">
+              <span className="text-white">Horsforth</span> in{" "}
+              <span className="text-white">Bloom</span>
             </h3>
-            <p className="text-gray-600 text-sm">
+            <p className="text-white/75 text-sm leading-relaxed">
               Our volunteers meet on Wednesday afternoons to plant and maintain
               various green spaces across Horsforth, including raised beds along
               busy streets, fruit trees in community orchards and wildflower
@@ -23,15 +24,15 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-4">
-              <span className="text-pink-700">Quick</span> Links
+            <h3 className="font-semibold mb-4">
+              <span className="text-white">Quick</span> Links
             </h3>
-            <ul className="space-y-2">
+            <ul className="footer-nav">
               {NAV_LINKS.map(({ href, label }) => (
                 <li key={href}>
                   <Link
                     href={href}
-                    className="text-gray-600 hover:text-orange-700 transition-colors text-sm"
+                    className="text-white/75 hover:text-white transition-colors text-sm leading-relaxed break-words"
                   >
                     {label}
                   </Link>
@@ -42,38 +43,47 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-4">
-              Get in <span className="text-green-700">Touch</span>
+            <h3 className="font-semibold mb-4">
+              Get in <span className="text-white">Touch</span>
             </h3>
             <div className="space-y-3">
-              <div className="flex items-center space-x-2">
-                <Mail className="h-4 w-4 text-orange-700" />
+              <div className="flex items-center gap-3">
+                <Mail
+                  aria-hidden="true"
+                  className="h-4 w-4 shrink-0 text-white/70"
+                />
                 <a
                   href={`mailto:${CONTACT_INFO.email}`}
-                  className="text-gray-600 hover:text-orange-700 transition-colors text-sm"
+                  className="text-white/75 hover:text-white transition-colors text-sm leading-relaxed break-words"
                 >
                   {CONTACT_INFO.email}
                 </a>
               </div>
-              <div className="flex items-center space-x-2">
-                <Facebook className="h-4 w-4 text-pink-700" />
+              <div className="flex items-center gap-3">
+                <Facebook
+                  aria-hidden="true"
+                  className="h-4 w-4 shrink-0 text-white/70"
+                />
                 <a
                   href={SOCIAL_LINKS.facebook}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-600 hover:text-pink-700 transition-colors text-sm"
+                  className="text-white/75 hover:text-white transition-colors text-sm leading-relaxed break-words"
                 >
                   Follow us on Facebook
                 </a>
               </div>
               {SOCIAL_LINKS.instagram ? (
-                <div className="flex items-center space-x-2">
-                  <Instagram className="h-4 w-4 text-pink-700" />
+                <div className="flex items-center gap-3">
+                  <Instagram
+                    aria-hidden="true"
+                    className="h-4 w-4 shrink-0 text-white/70"
+                  />
                   <a
                     href={SOCIAL_LINKS.instagram}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-600 hover:text-pink-700 text-sm"
+                    className="text-white/75 hover:text-white text-sm leading-relaxed"
                   >
                     Follow us on Instagram
                   </a>
@@ -83,23 +93,24 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-8 pt-8 border-t border-gray-200">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-500 text-sm">
+        <div className="footer-bottom">
+          <div className="flex flex-wrap gap-x-8 gap-y-3 justify-between flex-1">
+            <p className="text-white/65 text-sm leading-relaxed">
               © {new Date().getFullYear()} Horsforth in Bloom. All rights
               reserved.
             </p>
-            <p className="text-gray-500 text-sm mt-2 md:mt-0">
+            <p className="text-white/65 text-sm">
               Visit our{" "}
               <Link
                 href="/contact#links"
-                className="text-orange-700 hover:underline"
+                className="text-white hover:underline"
               >
                 useful links section
               </Link>{" "}
               for more local information
             </p>
           </div>
+          <SocialLinks />
         </div>
       </div>
     </footer>

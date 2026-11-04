@@ -1,4 +1,4 @@
-// Text and photographs supplied by Penny Pinn in October 2026.
+// Text and photographs supplied by Penny Pinn; updated via Cheryl on 4 November 2026.
 export const historyEntries = [
   {
     year: "2004",
@@ -118,5 +118,36 @@ export const historyEntries = [
       "Horsforth in Bloom created the planting around the Natter Bench in Hall Park and planted a tulip tree (Liriodendron tulipifera) behind the Natter Bench as part of the Queen’s Green Canopy, to mark Queen Elizabeth II’s Platinum Jubilee in 2022.",
     ],
     images: ["/history/image18.jpg", "/history/image19.jpg"],
+  },
+  {
+    year: "2024",
+    title: "Remembering Alfie and receiving Four Roses",
+    paragraphs: [
+      "Bulbs planted by the oak tree at Pollination Corner in memory of Alfie, who was stabbed there last year.",
+      "Yorkshire in Bloom Four Roses Award (judging on a ‘mystery shopper’ basis).",
+    ],
+    images: ["/history/2024-four-roses-award.png"],
+  },
+  {
+    year: "2025",
+    title: "New planters and sustainable planting",
+    paragraphs: [
+      "Three new planters built outside Wm Browns on New Road Side.",
+      "Horsforth in Bloom started work with Horsforth Climate Action and Horsforth Town Council on moving away from use of hanging baskets to more, bigger ground level planters with sustainable planting/trees.",
+    ],
+    images: ["/history/2025-new-road-side-planters.jpeg"],
+  },
+  {
+    year: "2026",
+    title: "A new Chair, more planters and knitted baskets",
+    paragraphs: [
+      "Penny Pinn became Chair",
+      "4 new planters built on Crabtree land, 7 new planters built on New Road Side. Knitted hanging baskets created and hung on New Road Side.",
+    ],
+    images: [
+      "/history/2026-new-road-side-planter.jpeg",
+      "/history/2026-new-planters.jpeg",
+      "/history/2026-knitted-hanging-baskets.jpeg",
+    ],
   },
 ];

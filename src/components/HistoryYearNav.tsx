@@ -25,8 +25,8 @@ export function HistoryYearNav({ years }: { years: string[] }) {
   }, [years]);
 
   return (
-    <nav aria-label="History by year" className="lg:sticky lg:top-32">
-      <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-stone-500">
+    <nav aria-label="History by year" className="lg:sticky lg:top-28">
+      <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-muted-ink">
         Jump to a year
       </p>
       <ol className="flex flex-wrap lg:grid lg:grid-cols-2 gap-1.5">
@@ -36,14 +36,14 @@ export function HistoryYearNav({ years }: { years: string[] }) {
               href={`#year-${year}`}
               onClick={() => setActiveYear(year)}
               aria-current={activeYear === year ? "location" : undefined}
-              className={`flex min-h-11 items-center justify-center rounded-md px-3 text-sm tabular-nums ${activeYear === year ? "bg-green-900 text-white font-semibold" : "text-stone-600 hover:bg-white hover:text-green-900 hover:underline underline-offset-4"}`}
+              className={`flex min-h-11 items-center justify-center rounded-md px-3 text-sm tabular-nums ${activeYear === year ? "bg-forest text-white font-semibold" : "text-muted-ink hover:bg-white hover:text-forest hover:underline underline-offset-4"}`}
             >
               {year}
             </a>
           </li>
         ))}
       </ol>
-      <p className="hidden lg:block mt-6 border-t border-stone-200 pt-5 text-sm leading-relaxed text-stone-500">
+      <p className="hidden lg:block mt-6 border-t border-line pt-5 text-sm leading-relaxed text-muted-ink">
         The people, planting and projects that shaped our town.
       </p>
     </nav>

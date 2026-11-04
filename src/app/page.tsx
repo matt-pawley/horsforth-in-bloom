@@ -1,7 +1,7 @@
+import { Facebook, Instagram, Link as LinkIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Facebook, Instagram, Link as LinkIcon } from "lucide-react";
 import { SOCIAL_LINKS } from "@/lib/constants";
 
 export default function Home() {
@@ -26,50 +26,39 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-green-50 py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <section className="home-hero">
+        <div className="site-container">
+          <div className="home-hero-grid">
             <div>
-              <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              <h1 className="home-title">
                 Welcome to{" "}
-                <span className="text-orange-500">Horsforth in Bloom</span>
+                <span className="text-forest">Horsforth in Bloom</span>
               </h1>
-              <p className="text-lg text-gray-700 mb-8 leading-relaxed">
+              <p className="home-intro">
                 Horsforth in Bloom is a community volunteer group that aims to
                 improve the Horsforth area by creating and maintaining planting
                 for the enjoyment of everyone, using sustainable principles and
                 supporting wildlife.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button
-                  asChild
-                  size="lg"
-                  className="bg-orange-400 hover:bg-orange-400/90"
-                >
+              <div className="action-row">
+                <Button asChild size="lg">
                   <Link href="/contact">Get Involved</Link>
                 </Button>
-                <Button
-                  asChild
-                  variant="outline"
-                  size="lg"
-                  className="border-pink-500 text-pink-500 hover:bg-pink-500 hover:text-white"
-                >
+                <Button asChild variant="outline" size="lg">
                   <Link
                     href={SOCIAL_LINKS.facebook}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <Facebook className="h-4 w-4 mr-2" />
+                    <Facebook
+                      aria-hidden="true"
+                      className="h-4 w-4 mr-2 text-berry"
+                    />
                     Follow us on Facebook
                   </Link>
                 </Button>
                 {SOCIAL_LINKS.instagram ? (
-                  <Button
-                    asChild
-                    variant="outline"
-                    size="lg"
-                    className="border-pink-500 text-pink-700 hover:bg-pink-50"
-                  >
+                  <Button asChild variant="outline" size="lg">
                     <a
                       href={SOCIAL_LINKS.instagram}
                       target="_blank"
@@ -88,8 +77,8 @@ export default function Home() {
                 alt="Horsforth in Bloom volunteers working in the community"
                 width={600}
                 height={400}
-                className="rounded-lg shadow-lg"
-                priority
+                className="home-photo content-photo"
+                preload
               />
             </div>
           </div>
@@ -97,13 +86,13 @@ export default function Home() {
       </section>
 
       {/* Introduction Section */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
-              About Our <span className="text-green-400">Work</span>
+      <section className="section-space pt-0">
+        <div className="site-container">
+          <div className="about-layout">
+            <h2 className="section-title">
+              About Our <span className="text-forest">Work</span>
             </h2>
-            <div className="prose prose-lg max-w-none text-gray-700">
+            <div className="prose-body">
               <p className="mb-6">
                 Horsforth in Bloom is a dedicated community volunteer group that
                 has been transforming our local area through the power of plants
@@ -138,37 +127,34 @@ export default function Home() {
       </section>
 
       {/* Awards Section */}
-      <section className="py-16 bg-orange-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Our <span className="text-orange-400">Awards</span>
+      <section className="section-space bg-mist/60">
+        <div className="site-container">
+          <div className="mb-8 max-w-2xl">
+            <h2 className="section-title mb-4">
+              Our <span className="text-forest">Awards</span>
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-base text-muted-ink leading-relaxed">
               We're proud to have been recognised for our community work through
               various Britain in Bloom awards
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="award-grid">
             {awards.map((award, index) => (
-              <div
-                key={`${award.provider}-${index}`}
-                className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow"
-              >
-                <div className="mb-4">
+              <div key={`${award.provider}-${index}`} className="award-item">
+                <div className="">
                   <Image
                     src={award.image}
                     alt={award.name}
                     width={300}
                     height={400}
-                    className="w-full h-auto rounded-lg shadow-sm border border-gray-200"
+                    className="award-image"
                   />
                 </div>
-                <div className="text-center">
-                  <p className="text-sm font-medium text-orange-400 mb-1">
+                <div className="min-w-0">
+                  <p className="text-xs font-semibold text-clay mb-2">
                     {award.provider}
                   </p>
-                  <h3 className="text-lg font-semibold text-gray-900">
+                  <h3 className="text-base font-semibold text-forest">
                     {award.name}
                   </h3>
                 </div>
@@ -179,14 +165,14 @@ export default function Home() {
       </section>
 
       {/* Volunteer Section */}
-      <section className="py-16 bg-green-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">
+      <section className="section-space volunteer-section">
+        <div className="site-container">
+          <div className="max-w-3xl">
+            <h2 className="section-title text-white mb-6">
               Interested in Becoming a{" "}
-              <span className="text-pink-500">Volunteer?</span>
+              <span className="text-white">Volunteer?</span>
             </h2>
-            <p className="text-lg text-gray-700 mb-8">
+            <p className="text-base sm:text-lg text-white/80 leading-relaxed mb-8">
               We're always looking for new volunteers to join our community!
               Whether you have years of gardening experience or are just
               starting out, we welcome people of all ages and skill levels.
@@ -194,19 +180,19 @@ export default function Home() {
               people, learn new skills, and make a positive impact on your local
               community.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="action-row">
               <Button
                 asChild
                 size="lg"
-                className="bg-green-400 hover:bg-green-400/90"
+                className="bg-white text-forest hover:bg-mist"
               >
                 <Link href="/contact">Get in Touch</Link>
               </Button>
               <Button
                 asChild
                 variant="outline"
+                className="border-white/40 text-white hover:bg-white/10 hover:border-white"
                 size="lg"
-                className="border-pink-500 text-pink-500 hover:bg-pink-500 hover:text-white"
               >
                 <Link
                   href={SOCIAL_LINKS.facebook}
@@ -218,17 +204,17 @@ export default function Home() {
                 </Link>
               </Button>
             </div>
-            <div className="mt-8 p-6 bg-orange-50 rounded-xl border border-orange-200 shadow-lg">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center space-x-3">
-                  <div className="w-12 h-12 bg-orange-400/20 rounded-full flex items-center justify-center">
-                    <LinkIcon className="w-6 h-6 text-orange-400" />
+            <div className="useful-link-row">
+              <div className="contents">
+                <div className="flex min-w-0 items-start gap-4">
+                  <div className="w-11 h-11 shrink-0 bg-white/10 rounded-full flex items-center justify-center">
+                    <LinkIcon className="w-5 h-5 text-white/80" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900 text-left">
+                    <h3 className="text-base font-semibold text-white text-left">
                       Useful Links
                     </h3>
-                    <p className="text-gray-600 text-sm text-left">
+                    <p className="text-white/70 text-sm text-left leading-relaxed">
                       Discover community groups, wildlife resources, and local
                       information
                     </p>
@@ -236,7 +222,7 @@ export default function Home() {
                 </div>
                 <Link
                   href="/contact#links"
-                  className="px-6 py-3 bg-orange-400 text-white rounded-lg hover:bg-orange-400/90 transition-colors duration-200 font-medium shadow-md hover:shadow-lg"
+                  className="inline-flex min-h-12 shrink-0 items-center px-5 py-3 rounded-lg border border-white/40 text-white text-sm font-semibold hover:bg-white/10"
                 >
                   View All Links
                 </Link>

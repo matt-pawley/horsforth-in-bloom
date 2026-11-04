@@ -1,6 +1,6 @@
+import { ArrowDown, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowDown, ArrowRight } from "lucide-react";
 import { HistoryYearNav } from "@/components/HistoryYearNav";
 import { historyEntries } from "@/lib/history-data";
 
@@ -32,6 +32,14 @@ const captions: Record<string, string> = {
   "/history/image18.jpg": "Planting around the Natter Bench in Hall Park",
   "/history/image19.jpg":
     "The tulip tree planted as part of the Queen's Green Canopy",
+  "/history/2024-four-roses-award.png":
+    "Horsforth's 2024 Yorkshire Rose Award of Four Roses",
+  "/history/2025-new-road-side-planters.jpeg":
+    "New planters outside Wm Browns on New Road Side",
+  "/history/2026-new-road-side-planter.jpeg": "A new planter on New Road Side",
+  "/history/2026-new-planters.jpeg": "New planters in 2026",
+  "/history/2026-knitted-hanging-baskets.jpeg":
+    "Knitted hanging baskets for New Road Side",
 };
 
 function MilestonePhotos({ images }: { images: string[] }) {
@@ -52,7 +60,7 @@ function MilestonePhotos({ images }: { images: string[] }) {
               className="object-contain outline-1 -outline-offset-1 outline-black/10"
             />
           </div>
-          <figcaption className="mt-2 text-xs leading-relaxed text-stone-600">
+          <figcaption className="mt-2 text-xs leading-relaxed text-muted-ink">
             {captions[src]}
           </figcaption>
         </figure>
@@ -63,26 +71,27 @@ function MilestonePhotos({ images }: { images: string[] }) {
 
 export default function History() {
   return (
-    <div className="bg-stone-50 text-stone-800">
-      <section className="border-b border-stone-200 bg-orange-50/60">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
-          <p className="mb-3 flex items-center gap-3 text-sm font-medium text-stone-600">
+    <div className="bg-paper text-ink">
+      <section className="border-b border-line bg-paper">
+        <div className="site-container py-8 sm:py-12 lg:py-16">
+          <p className="mb-3 flex items-center gap-3 text-sm font-medium text-muted-ink">
             <span
-              className="h-2 w-2 rounded-full bg-green-700"
+              className="h-2 w-2 rounded-full bg-forest"
               aria-hidden="true"
             />
-            Horsforth in Bloom <span aria-hidden="true">/</span> 2004–2023
+            Horsforth in Bloom <span aria-hidden="true">/</span>{" "}
+            {historyEntries[0].year}–{historyEntries.at(-1)?.year}
           </p>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-green-950 mb-4 sm:mb-6">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-forest mb-4 sm:mb-6">
             Our history
           </h1>
-          <p className="max-w-2xl text-base sm:text-lg lg:text-xl leading-relaxed text-stone-600">
+          <p className="max-w-2xl text-base sm:text-lg lg:text-xl leading-relaxed text-muted-ink">
             From our first Yorkshire in Bloom entry in 2004, local volunteers
             have helped make Horsforth greener, one community project at a time.
           </p>
           <a
             href="#timeline"
-            className="mt-7 hidden lg:inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-green-800 hover:text-green-950"
+            className="mt-7 hidden lg:inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-forest hover:text-forest"
           >
             Follow our story{" "}
             <ArrowDown className="h-4 w-4" aria-hidden="true" />
@@ -90,7 +99,7 @@ export default function History() {
         </div>
       </section>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16 grid lg:grid-cols-[160px_minmax(0,1fr)] gap-8 lg:gap-14">
+      <div className="site-container py-8 sm:py-12 lg:py-16 grid lg:grid-cols-[160px_minmax(0,1fr)] gap-8 lg:gap-14">
         <aside>
           <HistoryYearNav years={historyEntries.map(({ year }) => year)} />
         </aside>
@@ -100,7 +109,7 @@ export default function History() {
           aria-label="Horsforth in Bloom timeline"
           className="min-w-0 scroll-mt-4"
         >
-          <ol className="relative before:absolute before:top-3 before:bottom-0 before:left-[7px] before:w-px before:bg-green-800/20">
+          <ol className="relative before:absolute before:top-3 before:bottom-0 before:left-[7px] before:w-px before:bg-forest/20">
             {historyEntries.map((entry, index) => (
               <li
                 key={entry.year}
@@ -108,7 +117,7 @@ export default function History() {
               >
                 <span
                   aria-hidden="true"
-                  className={`absolute left-0 top-1.5 h-4 w-4 rounded-full border-[3px] border-stone-50 ${index === 0 ? "bg-orange-600 ring-1 ring-orange-600/30" : "bg-green-700 ring-1 ring-green-700/20"}`}
+                  className={`absolute left-0 top-1.5 h-4 w-4 rounded-full border-[3px] border-paper ${index === 0 ? "bg-orange-600 ring-1 ring-orange-600/30" : "bg-forest ring-1 ring-green-700/20"}`}
                 />
                 <article
                   id={`year-${entry.year}`}
@@ -123,14 +132,14 @@ export default function History() {
                   </time>
                   <h2
                     id={`milestone-${entry.year}`}
-                    className="text-2xl sm:text-[1.75rem] font-semibold tracking-tight text-green-950 leading-snug text-balance mb-5"
+                    className="text-2xl sm:text-[1.75rem] font-semibold tracking-tight text-forest leading-snug text-balance mb-5"
                   >
                     {entry.title}
                   </h2>
                   <div
                     className={`grid gap-6 lg:gap-8 ${entry.images.length > 0 ? "xl:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]" : ""}`}
                   >
-                    <div className="max-w-prose text-[15px] sm:text-base leading-relaxed text-stone-600 space-y-4">
+                    <div className="max-w-prose text-[15px] sm:text-base leading-relaxed text-muted-ink space-y-4">
                       {entry.paragraphs.map((paragraph) => (
                         <p key={paragraph}>{paragraph}</p>
                       ))}
@@ -139,7 +148,7 @@ export default function History() {
                   </div>
                   {index < historyEntries.length - 1 ? (
                     <div
-                      className="mt-10 sm:mt-12 h-px bg-stone-200"
+                      className="mt-10 sm:mt-12 h-px bg-line"
                       aria-hidden="true"
                     />
                   ) : null}
@@ -149,24 +158,24 @@ export default function History() {
           </ol>
 
           <div className="ml-9 sm:ml-12 mt-12 sm:mt-16 border-t border-green-900/15 pt-8 sm:pt-10">
-            <h2 className="text-2xl font-semibold text-green-950 mb-3">
+            <h2 className="text-2xl font-semibold text-forest mb-3">
               Be part of Horsforth in Bloom
             </h2>
-            <p className="text-stone-600 leading-relaxed max-w-xl">
+            <p className="text-muted-ink leading-relaxed max-w-xl">
               Our story continues with the people who give their time to care
               for Horsforth. Come and join us.
             </p>
             <div className="flex flex-wrap gap-x-6 gap-y-2 mt-5">
               <Link
                 href="/contact"
-                className="inline-flex min-h-11 items-center gap-2 font-semibold text-green-800 hover:underline underline-offset-4"
+                className="inline-flex min-h-11 items-center gap-2 font-semibold text-forest hover:underline underline-offset-4"
               >
                 Volunteer with us{" "}
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </Link>
               <Link
                 href="/gallery"
-                className="inline-flex min-h-11 items-center font-medium text-stone-600 hover:text-green-900 hover:underline underline-offset-4"
+                className="inline-flex min-h-11 items-center font-medium text-muted-ink hover:text-forest hover:underline underline-offset-4"
               >
                 Explore our gallery
               </Link>

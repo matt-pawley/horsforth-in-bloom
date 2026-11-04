@@ -1,5 +1,6 @@
 "use client";
 
+import { ChevronLeft, ChevronRight, Expand } from "lucide-react";
 import Image from "next/image";
 import { useRef, useState } from "react";
 import {
@@ -8,7 +9,6 @@ import {
   DialogDescription,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 import type { Site } from "@/lib/sites-data";
 
 export function SitesGallery({ sites }: { sites: Site[] }) {
@@ -34,7 +34,7 @@ export function SitesGallery({ sites }: { sites: Site[] }) {
 
   return (
     <>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-16">
+      <div className="site-container section-space space-y-12 sm:space-y-16">
         {sites.map((site) => (
           <section
             key={site.slug}
@@ -43,7 +43,7 @@ export function SitesGallery({ sites }: { sites: Site[] }) {
           >
             <h2
               id={`${site.slug}-heading`}
-              className="text-2xl font-semibold text-gray-900 mb-6"
+              className="text-2xl sm:text-3xl font-semibold tracking-tight text-forest mb-6"
             >
               {site.name}
             </h2>
@@ -57,15 +57,21 @@ export function SitesGallery({ sites }: { sites: Site[] }) {
                     selectedTrigger.current = event.currentTarget;
                     setSelection({ slug: site.slug, index });
                   }}
-                  className="relative aspect-[4/3] overflow-hidden rounded-lg border border-orange-200 hover:border-orange-500 focus-visible:outline-2 focus-visible:outline-orange-700 focus-visible:outline-offset-4"
+                  className="group relative aspect-[4/3] overflow-hidden rounded-xl outline-1 -outline-offset-1 outline-black/10 focus-visible:outline-2 focus-visible:outline-forest focus-visible:outline-offset-4"
                 >
                   <Image
                     src={src}
                     alt={`${site.name}, photo ${index + 1}`}
                     fill
                     sizes="(max-width: 767px) 50vw, (max-width: 1023px) 33vw, 300px"
-                    className="object-cover"
+                    className="object-cover motion-safe:transition-transform motion-safe:duration-300 motion-safe:group-hover:scale-[1.02]"
                   />
+                  <span
+                    aria-hidden="true"
+                    className="absolute right-2 bottom-2 rounded-full bg-white/90 p-2 text-forest"
+                  >
+                    <Expand className="h-4 w-4" />
+                  </span>
                 </button>
               ))}
             </div>
@@ -80,7 +86,7 @@ export function SitesGallery({ sites }: { sites: Site[] }) {
       >
         {selectedSite && selection ? (
           <DialogContent
-            className="!max-w-6xl !w-[calc(100vw-2rem)] !h-[85dvh] !p-4 sm:!p-6 !gap-3 bg-white flex flex-col overscroll-contain"
+            className="!max-w-6xl !w-[calc(100vw-2rem)] !h-[85dvh] !p-4 sm:!p-6 !gap-3 bg-paper flex flex-col overscroll-contain rounded-2xl"
             onCloseAutoFocus={(event) => {
               event.preventDefault();
               selectedTrigger.current?.focus();
@@ -96,14 +102,14 @@ export function SitesGallery({ sites }: { sites: Site[] }) {
               }
             }}
           >
-            <DialogTitle className="text-lg font-semibold text-gray-900 pr-8">
+            <DialogTitle className="text-lg font-semibold text-forest pr-10">
               {selectedSite.name}
             </DialogTitle>
-            <DialogDescription className="text-gray-600">
+            <DialogDescription className="text-muted-ink">
               Use the arrow buttons or left and right arrow keys to browse.
               Press Escape to close.
             </DialogDescription>
-            <div className="relative flex-1 min-h-0 bg-gray-50 rounded-md">
+            <div className="relative flex-1 min-h-0 bg-mist/50 rounded-lg">
               <Image
                 src={selectedSite.images[selection.index]}
                 alt={`${selectedSite.name}, photo ${selection.index + 1}`}
@@ -117,7 +123,7 @@ export function SitesGallery({ sites }: { sites: Site[] }) {
                 type="button"
                 onClick={() => move(-1)}
                 aria-label="Previous photo"
-                className="rounded-full p-3 border border-gray-300 text-gray-800 hover:bg-orange-50"
+                className="rounded-full p-3 border border-line bg-white text-forest hover:bg-mist"
               >
                 <ChevronLeft aria-hidden="true" className="h-5 w-5" />
               </button>
@@ -131,7 +137,7 @@ export function SitesGallery({ sites }: { sites: Site[] }) {
                 type="button"
                 onClick={() => move(1)}
                 aria-label="Next photo"
-                className="rounded-full p-3 border border-gray-300 text-gray-800 hover:bg-orange-50"
+                className="rounded-full p-3 border border-line bg-white text-forest hover:bg-mist"
               >
                 <ChevronRight aria-hidden="true" className="h-5 w-5" />
               </button>
